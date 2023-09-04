@@ -1,2 +1,9 @@
 (test
- (name stillsuit))
+ (name stillsuit)
+ (modules stillsuit)
+ (libraries alcotest))
+
+(test
+ (name bloom_filter)
+ (modules bloom_filter)
+ (libraries alcotest))

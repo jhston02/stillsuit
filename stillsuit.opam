@@ -13,6 +13,7 @@ depends: [
   "ocaml"
   "dune" {>= "3.10"}
   "bitv"
+  "alcotest" {with-test}
   "odoc" {with-doc}
 ]
 build: [

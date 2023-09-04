@@ -19,7 +19,7 @@
  (name stillsuit)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune bitv)
+ (depends ocaml dune bitv (alcotest :with-test))
  (tags
   (topics "to describe" your project)))
 

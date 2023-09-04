@@ -10,7 +10,7 @@ end
 
 (* The tests *)
 let test_lowercase () =
-  Alcotest.(check string) "same string" "hello!" (To_test.lowercase "hELLO!")
+  Alcotest.(check string) "same string1" "hello!" (To_test.lowercase "hELLO!")
 
 let test_capitalize () =
   Alcotest.(check string) "same string" "World." (To_test.capitalize "world.")
@@ -24,8 +24,8 @@ let test_list_concat () =
 (* Run it *)
 let () =
   let open Alcotest in
-  run "Utils" [
-      "string-case", [
+  run "Utils1" [
+      "string-case1", [
           test_case "Lower case"     `Quick test_lowercase;
           test_case "Capitalization" `Quick test_capitalize;
         ];
