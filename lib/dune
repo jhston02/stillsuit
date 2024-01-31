@@ -1,5 +1,4 @@
 (library
  (public_name stillsuit)
  (name stillsuit)
- (modules bloom_filter)
  (libraries bitv))

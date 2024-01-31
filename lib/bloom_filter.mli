@@ -6,8 +6,7 @@ module Poly : sig
   val is_present : 'a t -> 'a -> bool
   val clear : 'a t -> unit
   val length : 'a t -> int
-  val accumulate : 'a t -> 'a t -> 'a t
-  val contains : 'a t -> 'a t -> bool
+  val equals : 'a t -> 'a t -> bool
   val copy : 'a t -> 'a t
   val to_bytes : 'a t -> bytes
   val from_bytes : bytes -> 'a t
@@ -15,10 +14,10 @@ end
 
 include module type of Poly
 
-module type Seeded_Hashable = sig
+module type Seeded_hashable_type = sig
   type t
 
-  val hash : int -> t -> int
+  val seeded_hash : int -> t -> int
 end
 
 module type S = sig
@@ -30,11 +29,10 @@ module type S = sig
   val create : ?fp_prob:float -> int -> t
   val clear : t -> unit
   val length : t -> int
-  val accumulate : t -> t -> t
-  val contains : t -> t -> bool
+  val equals : t -> t -> bool
   val copy : t -> t
   val to_bytes : t -> bytes
   val from_bytes : bytes -> t
 end
 
-module MakeSeeded (H : Seeded_Hashable) : S with type value = H.t
+module MakeSeeded (H : Seeded_hashable_type) : S with type value = H.t

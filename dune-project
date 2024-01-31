@@ -1,4 +1,4 @@
-(lang dune 3.10)
+(lang dune 3.13)
 
 (name stillsuit)
 
@@ -19,7 +19,7 @@
  (name stillsuit)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune bitv (alcotest :with-test))
+ (depends ocaml dune bitv (alcotest :with-test) (qcheck :with-test) (qcheck-alcotest :with-test))
  (tags
   (topics "to describe" your project)))
 

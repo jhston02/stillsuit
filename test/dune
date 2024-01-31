@@ -1,9 +1,5 @@
-(test
- (name stillsuit)
- (modules stillsuit)
- (libraries alcotest))
+(include_subdirs unqualified)
 
 (test
- (name bloom_filter)
- (modules bloom_filter)
- (libraries alcotest))
+ (name stillsuit_test)
+ (libraries stillsuit fmt alcotest qcheck qcheck-alcotest))
